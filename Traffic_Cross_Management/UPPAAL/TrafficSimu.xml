@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.6//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_6.dtd'>
+<nta>
+	<declaration>int globalTime, anotherglobalTime;
+chan turnPedestrianLightsNSGreen, turnPedestrianLightsNSRed, turnPedestrianLightsEWRed, turnPedestrianLightsEWGreen;</declaration>
+	<template>
+		<name x="5" y="5">NorthSouthTrafficLight</name>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id0" x="-799" y="-204">
+			<name x="-809" y="-238">Red</name>
+			<label kind="invariant" x="-859" y="-255">globalTime&lt;=5</label>
+		</location>
+		<location id="id1" x="-484" y="-195">
+			<name x="-494" y="-229">Red_Yellow</name>
+			<label kind="invariant" x="-535" y="-178">globalTime &lt;= 2</label>
+		</location>
+		<location id="id2" x="-170" y="-204">
+			<name x="-180" y="-238">Green</name>
+			<label kind="invariant" x="-221" y="-255">globalTime&lt;=5</label>
+		</location>
+		<location id="id3" x="153" y="-204">
+			<name x="143" y="-238">Yellow</name>
+			<label kind="invariant" x="143" y="-187">globalTime&lt;= 2</label>
+		</location>
+		<init ref="id0"/>
+		<transition id="id4">
+			<source ref="id3"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-433" y="-110">globalTime &gt;= 2</label>
+			<label kind="synchronisation" x="-178" y="-85">turnPedestrianLightsEWGreen!</label>
+			<label kind="assignment" x="-433" y="-68">globalTime = 0</label>
+			<nail x="-195" y="-85"/>
+			<nail x="-535" y="-76"/>
+		</transition>
+		<transition id="id5">
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-102" y="-238">globalTime&gt;=5</label>
+			<label kind="assignment" x="-110" y="-195">globalTime = 0</label>
+		</transition>
+		<transition id="id6">
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-382" y="-238">globalTime&gt;=2</label>
+			<label kind="synchronisation" x="-425" y="-221">turnPedestrianLightsEWRed!</label>
+			<label kind="assignment" x="-358" y="-192">globalTime=0</label>
+		</transition>
+		<transition id="id7">
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-688" y="-229">globalTime&gt;=5</label>
+			<label kind="assignment" x="-688" y="-187">globalTime=0</label>
+		</transition>
+	</template>
+	<template>
+		<name>WestEastTrafficLight</name>
+		<location id="id8" x="-722" y="-127">
+			<name x="-732" y="-161">Green</name>
+			<label kind="invariant" x="-782" y="-178">anotherglobalTime&lt;=5</label>
+		</location>
+		<location id="id9" x="-407" y="-118">
+			<name x="-417" y="-152">Yellow</name>
+			<label kind="invariant" x="-458" y="-101">anotherglobalTime &lt;= 2</label>
+		</location>
+		<location id="id10" x="-93" y="-127">
+			<name x="-103" y="-161">Red</name>
+			<label kind="invariant" x="-144" y="-178">anotherglobalTime&lt;=5</label>
+		</location>
+		<location id="id11" x="230" y="-127">
+			<name x="220" y="-161">Red_Yellow</name>
+			<label kind="invariant" x="220" y="-110">anotherglobalTime&lt;= 2</label>
+		</location>
+		<init ref="id8"/>
+		<transition id="id12">
+			<source ref="id11"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-356" y="-33">anotherglobalTime &gt;= 2</label>
+			<label kind="synchronisation" x="-153" y="0">turnPedestrianLightsNSRed!</label>
+			<label kind="assignment" x="-356" y="9">anotherglobalTime = 0</label>
+			<nail x="-118" y="-8"/>
+			<nail x="-458" y="1"/>
+		</transition>
+		<transition id="id13">
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-25" y="-161">anotherglobalTime&gt;=5</label>
+			<label kind="assignment" x="-33" y="-118">anotherglobalTime = 0</label>
+		</transition>
+		<transition id="id14">
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-297" y="-152">anotherglobalTime&gt;=2</label>
+			<label kind="synchronisation" x="-389" y="-139">turnPedestrianLightsNSGreen!</label>
+			<label kind="assignment" x="-305" y="-110">anotherglobalTime=0</label>
+		</transition>
+		<transition id="id15">
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-611" y="-152">anotherglobalTime&gt;=5</label>
+			<label kind="assignment" x="-611" y="-110">anotherglobalTime=0</label>
+		</transition>
+	</template>
+	<template>
+		<name>NorthSouthFacingPedestrianLight</name>
+		<location id="id16" x="-111" y="-161">
+			<name x="-121" y="-195">Green</name>
+		</location>
+		<location id="id17" x="-391" y="-161">
+			<name x="-401" y="-195">Red</name>
+		</location>
+		<init ref="id17"/>
+		<transition id="id18">
+			<source ref="id16"/>
+			<target ref="id17"/>
+			<label kind="synchronisation" x="-365" y="-272">turnPedestrianLightsNSRed?</label>
+			<nail x="-111" y="-254"/>
+			<nail x="-391" y="-254"/>
+		</transition>
+		<transition id="id19">
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-373" y="-178">turnPedestrianLightsNSGreen?</label>
+		</transition>
+	</template>
+	<template>
+		<name>EastWestFacingPedestrianLight</name>
+		<location id="id20" x="-144" y="-51">
+			<name x="-154" y="-85">Green</name>
+		</location>
+		<location id="id21" x="136" y="-51">
+			<name x="126" y="-85">Red</name>
+		</location>
+		<init ref="id20"/>
+		<transition id="id22">
+			<source ref="id21"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="-126" y="-161">turnPedestrianLightsEWGreen?</label>
+			<nail x="136" y="-144"/>
+			<nail x="-144" y="-144"/>
+		</transition>
+		<transition id="id23">
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="-126" y="-68">turnPedestrianLightsEWRed?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarNorthSouthMiddleLane</name>
+		<location id="id24" x="-195" y="-110">
+			<name x="-263" y="-93">GoingStraight</name>
+		</location>
+		<location id="id25" x="42" y="-110">
+			<name x="8" y="-85">Waiting</name>
+		</location>
+		<init ref="id25"/>
+		<transition id="id26">
+			<source ref="id25"/>
+			<target ref="id24"/>
+			<label kind="synchronisation" x="-187" y="-221">turnPedestrianLightsEWRed?</label>
+			<nail x="42" y="-195"/>
+			<nail x="-195" y="-195"/>
+		</transition>
+		<transition id="id27">
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="synchronisation" x="-195" y="-102">turnPedestrianLightsEWGreen?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarNorthSouthRightLane</name>
+		<location id="id28" x="42" y="25">
+			<name x="17" y="59">StoppingForPedestrian</name>
+		</location>
+		<location id="id29" x="-195" y="-110">
+			<name x="-280" y="-144">GoingStraight</name>
+		</location>
+		<location id="id30" x="42" y="-110">
+			<name x="32" y="-144">Waiting</name>
+		</location>
+		<location id="id31" x="-161" y="25">
+			<name x="-229" y="51">TurningRight</name>
+		</location>
+		<init ref="id30"/>
+		<transition id="id32">
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="-204" y="-229">turnPedestrianLightsEWGreen?</label>
+			<nail x="-204" y="-212"/>
+			<nail x="42" y="-212"/>
+		</transition>
+		<transition id="id33">
+			<source ref="id30"/>
+			<target ref="id29"/>
+			<label kind="synchronisation" x="-177" y="-127">turnPedestrianLightsEWRed?</label>
+		</transition>
+		<transition id="id34">
+			<source ref="id31"/>
+			<target ref="id29"/>
+			<nail x="-272" y="-59"/>
+		</transition>
+		<transition id="id35">
+			<source ref="id28"/>
+			<target ref="id31"/>
+			<nail x="-34" y="127"/>
+		</transition>
+		<transition id="id36">
+			<source ref="id29"/>
+			<target ref="id28"/>
+		</transition>
+	</template>
+	<template>
+		<name>CarEastWestMiddleLane</name>
+		<location id="id37" x="365" y="-8">
+			<name x="339" y="25">Waiting</name>
+		</location>
+		<location id="id38" x="-425" y="0">
+			<name x="-460" y="33">GoingStraight</name>
+		</location>
+		<init ref="id38"/>
+		<transition id="id39">
+			<source ref="id37"/>
+			<target ref="id38"/>
+			<label kind="synchronisation" x="-127" y="-119">turnPedestrianLightsNSRed?</label>
+			<nail x="102" y="-93"/>
+			<nail x="-135" y="-93"/>
+		</transition>
+		<transition id="id40">
+			<source ref="id38"/>
+			<target ref="id37"/>
+			<label kind="synchronisation" x="-136" y="-25">turnPedestrianLightsNSGreen?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarEastWestRightLane</name>
+		<location id="id41" x="-195" y="-110">
+			<name x="-280" y="-144">GoingStraight</name>
+		</location>
+		<location id="id42" x="42" y="-110">
+			<name x="32" y="-144">Waiting</name>
+		</location>
+		<location id="id43" x="-161" y="25">
+			<name x="-229" y="51">TurningRight</name>
+		</location>
+		<location id="id44" x="42" y="25">
+			<name x="17" y="59">StoppingForPedestrian</name>
+		</location>
+		<init ref="id41"/>
+		<transition id="id45">
+			<source ref="id41"/>
+			<target ref="id42"/>
+			<label kind="synchronisation" x="-186" y="-229">turnPedestrianLightsNSGreen?</label>
+			<nail x="-204" y="-212"/>
+			<nail x="42" y="-212"/>
+		</transition>
+		<transition id="id46">
+			<source ref="id42"/>
+			<target ref="id41"/>
+			<label kind="synchronisation" x="-178" y="-127">turnPedestrianLightsNSRed?</label>
+		</transition>
+		<transition id="id47">
+			<source ref="id43"/>
+			<target ref="id41"/>
+			<nail x="-272" y="-59"/>
+		</transition>
+		<transition id="id48">
+			<source ref="id44"/>
+			<target ref="id43"/>
+			<nail x="-34" y="127"/>
+		</transition>
+		<transition id="id49">
+			<source ref="id41"/>
+			<target ref="id44"/>
+		</transition>
+	</template>
+	<template>
+		<name>Ticker</name>
+		<location id="id50" x="-51" y="-161">
+			<name x="-61" y="-195">ticking</name>
+			<label kind="invariant" x="-68" y="-127">true</label>
+		</location>
+		<init ref="id50"/>
+		<transition id="id51">
+			<source ref="id50"/>
+			<target ref="id50"/>
+			<label kind="assignment" x="-144" y="-34">globalTime = globalTime + 1,
+anotherglobalTime = anotherglobalTime + 1</label>
+			<nail x="-110" y="-34"/>
+			<nail x="17" y="-34"/>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianNorthSouthFacing</name>
+		<location id="id52" x="-170" y="-42">
+			<name x="-212" y="-17">Crossing</name>
+		</location>
+		<location id="id53" x="8" y="-42">
+			<name x="-17" y="-17">Waiting</name>
+		</location>
+		<init ref="id53"/>
+		<transition id="id54">
+			<source ref="id53"/>
+			<target ref="id52"/>
+			<label kind="synchronisation" x="-195" y="-153">turnPedestrianLightsNSGreen?</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id55">
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="synchronisation" x="-195" y="-34">turnPedestrianLightsNSRed?</label>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianEastWestFacing</name>
+		<location id="id56" x="8" y="-42">
+			<name x="-17" y="-17">Crossing</name>
+		</location>
+		<location id="id57" x="-170" y="-42">
+			<name x="-212" y="-17">Waiting</name>
+		</location>
+		<init ref="id56"/>
+		<transition id="id58">
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="synchronisation" x="-178" y="-144">turnPedestrianLightsEWRed?</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id59">
+			<source ref="id57"/>
+			<target ref="id56"/>
+			<label kind="synchronisation" x="-204" y="-68">turnPedestrianLightsEWGreen?</label>
+		</transition>
+	</template>
+	<system>// Instantiate scheduler templates
+NSTrafficLight = NorthSouthTrafficLight();
+EWTrafficLight = WestEastTrafficLight();
+NSPedestrianLight = NorthSouthFacingPedestrianLight();
+EWPedestrianLight = EastWestFacingPedestrianLight();
+NSMiddle_Car = CarNorthSouthMiddleLane();
+NSRight_Car = CarNorthSouthRightLane();
+EWMiddle_Car = CarEastWestMiddleLane();
+EWRight_Car = CarEastWestRightLane();
+NSPedestrian = PedestrianNorthSouthFacing();
+EWPedestrian = PedestrianEastWestFacing();
+timeManager = Ticker();
+
+
+// Declare the system
+system NSTrafficLight, EWTrafficLight, NSPedestrianLight, EWPedestrianLight, NSMiddle_Car, NSRight_Car, EWMiddle_Car, EWRight_Car, NSPedestrian,EWPedestrian, timeManager;</system>
+	<queries>
+		<query>
+			<formula/>
+			<comment/>
+		</query>
+	</queries>
+</nta>
