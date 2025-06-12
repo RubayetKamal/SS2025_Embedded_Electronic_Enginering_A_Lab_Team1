@@ -1,0 +1,144 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram id="yI9ZZASbAn16jp6NPaLR" name="Page-1">
+    <mxGraphModel dx="2066" dy="1209" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-1" value="Pedestrian button" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="320" y="202" width="100" height="358" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-2" value="Traffic controller" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="500" y="202" width="100" height="358" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="lDKAaXiZkHhvnIylQJ-8-2">
+          <mxGeometry x="45" y="70" width="10" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-21" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;fontSize=13;fontFamily=Times New Roman;strokeWidth=3;" edge="1" parent="lDKAaXiZkHhvnIylQJ-8-2" source="lDKAaXiZkHhvnIylQJ-8-3" target="lDKAaXiZkHhvnIylQJ-8-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="78" as="sourcePoint" />
+            <mxPoint x="130" y="118" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="120" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-23" value="Store pedRequest=TRUE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontFamily=Times New Roman;" vertex="1" connectable="0" parent="lDKAaXiZkHhvnIylQJ-8-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-4" value="Push the button" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1" source="lDKAaXiZkHhvnIylQJ-8-1" target="lDKAaXiZkHhvnIylQJ-8-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="375" y="282" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="460" y="282" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-5" value="Traffic Light" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="710" y="202" width="100" height="358" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="lDKAaXiZkHhvnIylQJ-8-5">
+          <mxGeometry x="45" y="80" width="10" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-7" value="Check curent state&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1" source="lDKAaXiZkHhvnIylQJ-8-2">
+          <mxGeometry x="0.0988" y="2" relative="1" as="geometry">
+            <mxPoint x="551" y="240" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="599" y="340" />
+              <mxPoint x="819" y="280" />
+            </Array>
+            <mxPoint x="755" y="340" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-8" value="Current state = RED" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1" source="lDKAaXiZkHhvnIylQJ-8-6" target="lDKAaXiZkHhvnIylQJ-8-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="665" y="440" />
+            </Array>
+            <mxPoint x="740" y="440" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-9" value="Pedestrian traffic light&amp;nbsp;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="880" y="202" width="100" height="358" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-10" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="lDKAaXiZkHhvnIylQJ-8-9">
+          <mxGeometry x="45" y="238" width="10" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-11" value="Run normal traffic sequence" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1" target="lDKAaXiZkHhvnIylQJ-8-6">
+          <mxGeometry x="0.0893" relative="1" as="geometry">
+            <mxPoint x="551" y="410" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="630" y="410" />
+              <mxPoint x="810" y="490" />
+              <mxPoint x="638" y="390" />
+            </Array>
+            <mxPoint x="750" y="410" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-12" value="Current state is not red" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1">
+          <mxGeometry x="-0.0588" y="-2" relative="1" as="geometry">
+            <mxPoint x="550" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="380" />
+            </Array>
+            <mxPoint x="750" y="380" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-17" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=13;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="470" as="sourcePoint" />
+            <mxPoint x="925" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-18" value="PedSignal= Walk" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=13;" vertex="1" connectable="0" parent="lDKAaXiZkHhvnIylQJ-8-17">
+          <mxGeometry x="0.0093" y="1" relative="1" as="geometry">
+            <mxPoint x="21" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-24" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;fontSize=13;fontFamily=Times New Roman;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="935" y="470" as="sourcePoint" />
+            <mxPoint x="935" y="490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1000" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-25" value="Wait 10 sec" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontFamily=Times New Roman;" vertex="1" connectable="0" parent="lDKAaXiZkHhvnIylQJ-8-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-26" value="Timeout" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=3;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1">
+          <mxGeometry x="-0.0588" y="-2" relative="1" as="geometry">
+            <mxPoint x="550" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="500" />
+            </Array>
+            <mxPoint x="925" y="500" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-27" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=13;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="540" as="sourcePoint" />
+            <mxPoint x="925" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-28" value="PedSignal= Don&#39;tWalk" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=13;" vertex="1" connectable="0" parent="lDKAaXiZkHhvnIylQJ-8-27">
+          <mxGeometry x="0.0093" y="1" relative="1" as="geometry">
+            <mxPoint x="11" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lDKAaXiZkHhvnIylQJ-8-30" value="Pedsetrian request" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="150" width="880" height="490" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
