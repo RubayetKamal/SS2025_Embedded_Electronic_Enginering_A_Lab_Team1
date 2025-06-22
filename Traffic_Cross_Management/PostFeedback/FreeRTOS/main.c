@@ -14,9 +14,11 @@
 int main() {
     carQueueMutex = xSemaphoreCreateMutex();
     crossingMutex = xSemaphoreCreateMutex();
-
+    initFCFS();
     xTaskCreate(carGeneratorTask, "CarGen", 1024, NULL, 1, NULL);
     xTaskCreate(pedestrianTask, "Pedestrian", 1024, NULL, 1, NULL);
 
     vTaskStartScheduler();
+    
+    for(;;);
 }
