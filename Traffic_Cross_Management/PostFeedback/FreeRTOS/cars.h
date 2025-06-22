@@ -1,12 +1,16 @@
 #ifndef CARS_H
 #define CARS_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 #include "portable.h"
-#include "semaphore.h"
+#include "semphr.h"
 
 #define MAX_CARS 10
-SemaphoreHandle_t carQueueMutex;
-
+extern SemaphoreHandle_t carQueueMutex;
+extern SemaphoreHandle_t logMutex;
 typedef enum {
     NORTH,
     SOUTH,
@@ -26,11 +30,13 @@ typedef struct {
     TurnDirection turn;
     TickType_t arrivalTime;
     bool active;
+    SemaphoreHandle_t goSem;
 } Car;
 
-int computePriority(Car* car);
-bool canProceed(Car* self);
-void carTask(void *params);
-void carGeneratorTask(void *params);
+void initFCFS(void);
+void arbiterTask(void *pv);
+void carTask(void *pv);
+void carGeneratorTask(void *pv);
+void log_event(const char* event, Car* car);
 
 #endif
