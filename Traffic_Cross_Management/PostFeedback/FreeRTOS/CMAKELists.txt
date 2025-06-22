@@ -1,0 +1,55 @@
+cmake_minimum_required(VERSION 3.15)
+project(pratice VERSION 1.0 LANGUAGES C)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# ─── Where the final EXE should go ───
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
+    "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice")
+
+# ─── Paths ───
+set(FREERTOS_PATH   "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice/Source")
+set(FREERTOS_CONFIG "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice")
+
+# ─── FreeRTOS kernel (static) ───
+add_library(freertos_kernel STATIC
+    "${FREERTOS_PATH}/croutine.c"
+    "${FREERTOS_PATH}/event_groups.c"
+    "${FREERTOS_PATH}/list.c"
+    "${FREERTOS_PATH}/queue.c"
+    "${FREERTOS_PATH}/stream_buffer.c"
+    "${FREERTOS_PATH}/tasks.c"
+    "${FREERTOS_PATH}/timers.c"
+    "${FREERTOS_PATH}/portable/MemMang/heap_4.c"
+    "${FREERTOS_PATH}/portable/MSVC-MingW/Win32/port.c"
+)
+
+target_include_directories(freertos_kernel PUBLIC
+    "${FREERTOS_PATH}/include"
+    "${FREERTOS_CONFIG}"
+    "${FREERTOS_PATH}/portable/MSVC-MingW/Win32"
+)
+
+if (WIN32)
+    target_link_libraries(freertos_kernel PUBLIC winmm)
+endif()
+
+# ─── Application ───
+add_executable(pratice
+    "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice/main.c"
+    "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice/pedestrian.c"
+    "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice/cars.c"
+    "C:/Users/User/OneDrive/Desktop/RTOS/vscode/vscode/pratice/hooks.c"
+)
+
+target_include_directories(pratice PRIVATE
+    "${FREERTOS_PATH}/include"
+    "${FREERTOS_CONFIG}"
+)
+
+target_link_libraries(pratice PRIVATE freertos_kernel)
+
+set_target_properties(pratice PROPERTIES
+    C_STANDARD 11
+    C_STANDARD_REQUIRED ON
+)
