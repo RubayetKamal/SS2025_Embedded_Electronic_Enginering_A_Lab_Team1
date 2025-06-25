@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.6//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_6.dtd'>
+<nta>
+	<declaration>int globalTime, anotherglobalTime;
+chan PedestrianOnWestCrossing,PedestrianOnWestCrossed, PedestrianOnNorthCrossed, PedestrianOnNorthCrossing, PedestrianOnSouthCrossing,PedestrianOnSouthCrossed, PedestrianOnEastCrossing,PedestrianOnEastCrossed ;
+</declaration>
+	<template>
+		<name>CarSM</name>
+		<location id="id0" x="-1521" y="-646">
+			<name x="-1555" y="-621">Arrived</name>
+		</location>
+		<location id="id1" x="-909" y="-535">
+			<name x="-919" y="-569">GoStraight</name>
+		</location>
+		<location id="id2" x="-909" y="-952">
+			<name x="-919" y="-986">LeftTurn</name>
+		</location>
+		<location id="id3" x="-909" y="-765">
+			<name x="-919" y="-799">Stop</name>
+		</location>
+		<location id="id4" x="-289" y="-646">
+			<name x="-299" y="-680">Moving</name>
+		</location>
+		<location id="id5" x="-909" y="-697">
+		</location>
+		<location id="id6" x="-1173" y="-654">
+			<name x="-1183" y="-688">ZebraCrossing</name>
+		</location>
+		<init ref="id0"/>
+		<transition id="id7">
+			<source ref="id0"/>
+			<target ref="id2"/>
+		</transition>
+		<transition id="id8">
+			<source ref="id0"/>
+			<target ref="id1"/>
+		</transition>
+		<transition id="id9">
+			<source ref="id6"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-1139" y="-620">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id10">
+			<source ref="id6"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-1190" y="-773">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id11">
+			<source ref="id0"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-1428" y="-680">PedestrianOnSouthCrossing?</label>
+		</transition>
+		<transition id="id12">
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-705" y="-671">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id13">
+			<source ref="id1"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-952" y="-654">PedestrianOnNorthCrossing?</label>
+		</transition>
+		<transition id="id14">
+			<source ref="id1"/>
+			<target ref="id4"/>
+		</transition>
+		<transition id="id15">
+			<source ref="id2"/>
+			<target ref="id4"/>
+		</transition>
+		<transition id="id16">
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-773" y="-756">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id17">
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-1011" y="-841">PedestrianOnWestCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarSR</name>
+		<location id="id18" x="-1164" y="-510">
+			<name x="-1198" y="-485">Arrived</name>
+		</location>
+		<location id="id19" x="-603" y="-816">
+			<name x="-613" y="-850">RightTurn</name>
+		</location>
+		<location id="id20" x="-833" y="-518">
+			<name x="-843" y="-552">ZebraCrossing</name>
+		</location>
+		<location id="id21" x="-578" y="-629">
+			<name x="-588" y="-663">Stop</name>
+		</location>
+		<location id="id22" x="-187" y="-578">
+			<name x="-197" y="-612">Moving</name>
+		</location>
+		<init ref="id18"/>
+		<transition id="id23">
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="-518" y="-612">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id24">
+			<source ref="id19"/>
+			<target ref="id22"/>
+		</transition>
+		<transition id="id25">
+			<source ref="id18"/>
+			<target ref="id19"/>
+		</transition>
+		<transition id="id26">
+			<source ref="id20"/>
+			<target ref="id19"/>
+			<label kind="synchronisation" x="-850" y="-637">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id27">
+			<source ref="id18"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="-1113" y="-544">PedestrianOnSouthCrossing?</label>
+		</transition>
+		<transition id="id28">
+			<source ref="id19"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="-671" y="-705">PedestrianOnEastCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarNM</name>
+		<location id="id29" x="-1521" y="-646">
+			<name x="-1555" y="-621">Arrived</name>
+		</location>
+		<location id="id30" x="-909" y="-952">
+			<name x="-919" y="-986">LeftTurn</name>
+		</location>
+		<location id="id31" x="-909" y="-535">
+			<name x="-919" y="-569">GoStraight</name>
+		</location>
+		<location id="id32" x="-1173" y="-654">
+			<name x="-1183" y="-688">ZebraCrossing</name>
+		</location>
+		<location id="id33" x="-909" y="-697">
+		</location>
+		<location id="id34" x="-289" y="-646">
+			<name x="-299" y="-680">Moving</name>
+		</location>
+		<location id="id35" x="-909" y="-765">
+			<name x="-919" y="-799">Stop</name>
+		</location>
+		<init ref="id29"/>
+		<transition id="id36">
+			<source ref="id29"/>
+			<target ref="id30"/>
+		</transition>
+		<transition id="id37">
+			<source ref="id29"/>
+			<target ref="id31"/>
+		</transition>
+		<transition id="id38">
+			<source ref="id32"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="-1139" y="-620">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id39">
+			<source ref="id32"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="-1190" y="-773">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id40">
+			<source ref="id29"/>
+			<target ref="id32"/>
+			<label kind="synchronisation" x="-1428" y="-680">PedestrianOnNorthCrossing?</label>
+		</transition>
+		<transition id="id41">
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="-705" y="-671">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id42">
+			<source ref="id31"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="-952" y="-654">PedestrianOnSouthCrossing?</label>
+		</transition>
+		<transition id="id43">
+			<source ref="id31"/>
+			<target ref="id34"/>
+		</transition>
+		<transition id="id44">
+			<source ref="id30"/>
+			<target ref="id34"/>
+		</transition>
+		<transition id="id45">
+			<source ref="id35"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="-705" y="-739">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id46">
+			<source ref="id30"/>
+			<target ref="id35"/>
+			<label kind="synchronisation" x="-1011" y="-841">PedestrianOnEastCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarNR</name>
+		<location id="id47" x="-578" y="-629">
+			<name x="-588" y="-663">Stop</name>
+		</location>
+		<location id="id48" x="-187" y="-578">
+			<name x="-197" y="-612">Moving</name>
+		</location>
+		<location id="id49" x="-603" y="-816">
+			<name x="-613" y="-850">RightTurn</name>
+		</location>
+		<location id="id50" x="-1164" y="-510">
+			<name x="-1198" y="-485">Arrived</name>
+		</location>
+		<location id="id51" x="-833" y="-518">
+			<name x="-843" y="-552">ZebraCrossing</name>
+		</location>
+		<init ref="id50"/>
+		<transition id="id52">
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="synchronisation" x="-518" y="-612">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id53">
+			<source ref="id49"/>
+			<target ref="id48"/>
+		</transition>
+		<transition id="id54">
+			<source ref="id50"/>
+			<target ref="id49"/>
+		</transition>
+		<transition id="id55">
+			<source ref="id51"/>
+			<target ref="id49"/>
+			<label kind="synchronisation" x="-850" y="-637">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id56">
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="synchronisation" x="-1113" y="-544">PedestrianOnNorthCrossing?</label>
+		</transition>
+		<transition id="id57">
+			<source ref="id49"/>
+			<target ref="id47"/>
+			<label kind="synchronisation" x="-671" y="-705">PedestrianOnWestCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarWR</name>
+		<location id="id58" x="-578" y="-629">
+			<name x="-588" y="-663">Stop</name>
+		</location>
+		<location id="id59" x="-187" y="-578">
+			<name x="-197" y="-612">Moving</name>
+		</location>
+		<location id="id60" x="-603" y="-816">
+			<name x="-613" y="-850">RightTurn</name>
+		</location>
+		<location id="id61" x="-1164" y="-510">
+			<name x="-1198" y="-485">Arrived</name>
+		</location>
+		<location id="id62" x="-833" y="-518">
+			<name x="-843" y="-552">ZebraCrossing</name>
+		</location>
+		<init ref="id61"/>
+		<transition id="id63">
+			<source ref="id58"/>
+			<target ref="id59"/>
+			<label kind="synchronisation" x="-518" y="-612">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id64">
+			<source ref="id60"/>
+			<target ref="id59"/>
+		</transition>
+		<transition id="id65">
+			<source ref="id61"/>
+			<target ref="id60"/>
+		</transition>
+		<transition id="id66">
+			<source ref="id62"/>
+			<target ref="id60"/>
+			<label kind="synchronisation" x="-850" y="-637">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id67">
+			<source ref="id61"/>
+			<target ref="id62"/>
+			<label kind="synchronisation" x="-1113" y="-544">PedestrianOnWestCrossing?</label>
+		</transition>
+		<transition id="id68">
+			<source ref="id60"/>
+			<target ref="id58"/>
+			<label kind="synchronisation" x="-671" y="-705">PedestrianOnSouthCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarEM</name>
+		<location id="id69" x="-1521" y="-646">
+			<name x="-1555" y="-621">Arrived</name>
+		</location>
+		<location id="id70" x="-909" y="-952">
+			<name x="-919" y="-986">LeftTurn</name>
+		</location>
+		<location id="id71" x="-909" y="-535">
+			<name x="-919" y="-569">GoStraight</name>
+		</location>
+		<location id="id72" x="-1173" y="-654">
+			<name x="-1183" y="-688">ZebraCrossing</name>
+		</location>
+		<location id="id73" x="-909" y="-697">
+		</location>
+		<location id="id74" x="-289" y="-646">
+			<name x="-299" y="-680">Moving</name>
+		</location>
+		<location id="id75" x="-909" y="-765">
+			<name x="-919" y="-799">Stop</name>
+		</location>
+		<init ref="id69"/>
+		<transition id="id76">
+			<source ref="id69"/>
+			<target ref="id70"/>
+		</transition>
+		<transition id="id77">
+			<source ref="id69"/>
+			<target ref="id71"/>
+		</transition>
+		<transition id="id78">
+			<source ref="id72"/>
+			<target ref="id71"/>
+			<label kind="synchronisation" x="-1139" y="-620">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id79">
+			<source ref="id72"/>
+			<target ref="id70"/>
+			<label kind="synchronisation" x="-1190" y="-773">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id80">
+			<source ref="id69"/>
+			<target ref="id72"/>
+			<label kind="synchronisation" x="-1428" y="-680">PedestrianOnEastCrossing?</label>
+		</transition>
+		<transition id="id81">
+			<source ref="id73"/>
+			<target ref="id74"/>
+			<label kind="synchronisation" x="-705" y="-671">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id82">
+			<source ref="id71"/>
+			<target ref="id73"/>
+			<label kind="synchronisation" x="-952" y="-654">PedestrianOnWestCrossing?</label>
+		</transition>
+		<transition id="id83">
+			<source ref="id71"/>
+			<target ref="id74"/>
+		</transition>
+		<transition id="id84">
+			<source ref="id70"/>
+			<target ref="id74"/>
+		</transition>
+		<transition id="id85">
+			<source ref="id75"/>
+			<target ref="id74"/>
+			<label kind="synchronisation" x="-705" y="-739">PedestrianOnSouthCrossed?</label>
+		</transition>
+		<transition id="id86">
+			<source ref="id70"/>
+			<target ref="id75"/>
+			<label kind="synchronisation" x="-1011" y="-841">PedestrianOnSouthCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarWM</name>
+		<location id="id87" x="-1504" y="-646">
+			<name x="-1538" y="-621">Arrived</name>
+		</location>
+		<location id="id88" x="-943" y="-952">
+			<name x="-953" y="-986">LeftTurn</name>
+		</location>
+		<location id="id89" x="-892" y="-586">
+			<name x="-902" y="-620">GoStraight</name>
+		</location>
+		<location id="id90" x="-1173" y="-654">
+			<name x="-1183" y="-688">ZebraCrossing</name>
+		</location>
+		<location id="id91" x="-901" y="-697">
+		</location>
+		<location id="id92" x="-289" y="-646">
+			<name x="-299" y="-680">Moving</name>
+		</location>
+		<location id="id93" x="-918" y="-765">
+			<name x="-928" y="-799">Stop</name>
+		</location>
+		<init ref="id87"/>
+		<transition id="id94">
+			<source ref="id87"/>
+			<target ref="id88"/>
+		</transition>
+		<transition id="id95">
+			<source ref="id87"/>
+			<target ref="id89"/>
+		</transition>
+		<transition id="id96">
+			<source ref="id90"/>
+			<target ref="id89"/>
+			<label kind="synchronisation" x="-1139" y="-637">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id97">
+			<source ref="id90"/>
+			<target ref="id88"/>
+			<label kind="synchronisation" x="-1190" y="-773">PedestrianOnWestCrossed?</label>
+		</transition>
+		<transition id="id98">
+			<source ref="id87"/>
+			<target ref="id90"/>
+			<label kind="synchronisation" x="-1453" y="-680">PedestrianOnWestCrossing?</label>
+		</transition>
+		<transition id="id99">
+			<source ref="id91"/>
+			<target ref="id92"/>
+			<label kind="synchronisation" x="-765" y="-688">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id100">
+			<source ref="id89"/>
+			<target ref="id91"/>
+			<label kind="synchronisation" x="-952" y="-671">PedestrianOnEastCrossing?</label>
+		</transition>
+		<transition id="id101">
+			<source ref="id89"/>
+			<target ref="id92"/>
+		</transition>
+		<transition id="id102">
+			<source ref="id88"/>
+			<target ref="id92"/>
+		</transition>
+		<transition id="id103">
+			<source ref="id93"/>
+			<target ref="id92"/>
+			<label kind="synchronisation" x="-816" y="-765">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id104">
+			<source ref="id88"/>
+			<target ref="id93"/>
+			<label kind="synchronisation" x="-1011" y="-841">PedestrianOnNorthCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarER</name>
+		<location id="id105" x="-578" y="-629">
+			<name x="-588" y="-663">Stop</name>
+		</location>
+		<location id="id106" x="-187" y="-578">
+			<name x="-197" y="-612">Moving</name>
+		</location>
+		<location id="id107" x="-603" y="-816">
+			<name x="-613" y="-850">RightTurn</name>
+		</location>
+		<location id="id108" x="-1164" y="-510">
+			<name x="-1198" y="-485">Arrived</name>
+		</location>
+		<location id="id109" x="-833" y="-518">
+			<name x="-843" y="-552">ZebraCrossing</name>
+		</location>
+		<init ref="id108"/>
+		<transition id="id110">
+			<source ref="id105"/>
+			<target ref="id106"/>
+			<label kind="synchronisation" x="-518" y="-612">PedestrianOnNorthCrossed?</label>
+		</transition>
+		<transition id="id111">
+			<source ref="id107"/>
+			<target ref="id106"/>
+		</transition>
+		<transition id="id112">
+			<source ref="id108"/>
+			<target ref="id107"/>
+		</transition>
+		<transition id="id113">
+			<source ref="id109"/>
+			<target ref="id107"/>
+			<label kind="synchronisation" x="-850" y="-637">PedestrianOnEastCrossed?</label>
+		</transition>
+		<transition id="id114">
+			<source ref="id108"/>
+			<target ref="id109"/>
+			<label kind="synchronisation" x="-1113" y="-544">PedestrianOnEastCrossing?</label>
+		</transition>
+		<transition id="id115">
+			<source ref="id107"/>
+			<target ref="id105"/>
+			<label kind="synchronisation" x="-671" y="-705">PedestrianOnNorthCrossing?</label>
+		</transition>
+	</template>
+	<template>
+		<name>Ticker</name>
+		<location id="id116" x="-51" y="-161">
+			<name x="-61" y="-195">ticking</name>
+			<label kind="invariant" x="-68" y="-127">true</label>
+		</location>
+		<init ref="id116"/>
+		<transition id="id117">
+			<source ref="id116"/>
+			<target ref="id116"/>
+			<label kind="assignment" x="-144" y="-34">globalTime = globalTime + 1,
+anotherglobalTime = anotherglobalTime + 1</label>
+			<nail x="-110" y="-34"/>
+			<nail x="17" y="-34"/>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianNorthSouthFacingOnWest</name>
+		<location id="id118" x="-263" y="-42">
+			<name x="-305" y="-17">Crossing</name>
+			<label kind="invariant" x="-348" y="-85">globalTime&lt;=3</label>
+		</location>
+		<location id="id119" x="127" y="-42">
+			<name x="102" y="-17">Crossed</name>
+		</location>
+		<init ref="id118"/>
+		<transition id="id120">
+			<source ref="id119"/>
+			<target ref="id118"/>
+			<label kind="synchronisation" x="-195" y="-153">PedestrianOnWestCrossing!</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id121">
+			<source ref="id118"/>
+			<target ref="id119"/>
+			<label kind="guard" x="-136" y="-76">globalTime&gt;=3</label>
+			<label kind="synchronisation" x="-195" y="-34">PedestrianOnWestCrossed!</label>
+			<label kind="assignment" x="-136" y="-8">globalTime = 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianEastWestFacingOnNorth</name>
+		<location id="id122" x="-263" y="-42">
+			<name x="-305" y="-17">Crossing</name>
+			<label kind="invariant" x="-348" y="-85">globalTime&lt;=14</label>
+		</location>
+		<location id="id123" x="127" y="-42">
+			<name x="102" y="-17">Crossed</name>
+		</location>
+		<init ref="id122"/>
+		<transition id="id124">
+			<source ref="id123"/>
+			<target ref="id122"/>
+			<label kind="synchronisation" x="-195" y="-153">PedestrianOnNorthCrossing!</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id125">
+			<source ref="id122"/>
+			<target ref="id123"/>
+			<label kind="guard" x="-136" y="-76">globalTime&gt;=14</label>
+			<label kind="synchronisation" x="-195" y="-34">PedestrianOnNorthCrossed!</label>
+			<label kind="assignment" x="-136" y="-8">globalTime = 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianEastWestFacingOnSouth</name>
+		<location id="id126" x="-263" y="-42">
+			<name x="-305" y="-17">Crossing</name>
+			<label kind="invariant" x="-348" y="-85">globalTime&lt;=10</label>
+		</location>
+		<location id="id127" x="127" y="-42">
+			<name x="102" y="-17">Crossed</name>
+		</location>
+		<init ref="id126"/>
+		<transition id="id128">
+			<source ref="id127"/>
+			<target ref="id126"/>
+			<label kind="synchronisation" x="-195" y="-153">PedestrianOnSouthCrossing!</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id129">
+			<source ref="id126"/>
+			<target ref="id127"/>
+			<label kind="guard" x="-136" y="-76">globalTime&gt;=10</label>
+			<label kind="synchronisation" x="-195" y="-34">PedestrianOnSouthCrossed!</label>
+			<label kind="assignment" x="-136" y="-8">globalTime = 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>PedestrianNorthSouthFacingOnEast</name>
+		<location id="id130" x="-263" y="-42">
+			<name x="-305" y="-17">Crossing</name>
+			<label kind="invariant" x="-348" y="-85">globalTime&lt;=7</label>
+		</location>
+		<location id="id131" x="127" y="-42">
+			<name x="102" y="-17">Crossed</name>
+		</location>
+		<init ref="id130"/>
+		<transition id="id132">
+			<source ref="id131"/>
+			<target ref="id130"/>
+			<label kind="synchronisation" x="-195" y="-153">PedestrianOnEastCrossing!</label>
+			<nail x="0" y="-119"/>
+			<nail x="-161" y="-119"/>
+		</transition>
+		<transition id="id133">
+			<source ref="id130"/>
+			<target ref="id131"/>
+			<label kind="guard" x="-136" y="-76">globalTime&gt;=7</label>
+			<label kind="synchronisation" x="-195" y="-34">PedestrianOnEastCrossed!</label>
+			<label kind="assignment" x="-136" y="-8">globalTime = 0</label>
+		</transition>
+	</template>
+	<system>// Instantiate car templates
+Car_SM = CarSM(); // South Middle
+Car_SR = CarSR(); // South Right
+Car_NM = CarNM();  // North Middle (?)
+Car_NR = CarNR();  // North Right (?)
+Car_WR = CarWR();  // West Right
+Car_EM = CarEM();  // East Middle
+Car_WM = CarWM();  // West Middle
+Car_ER = CarER();  // East Right
+
+// Instantiate pedestrian templates
+Ped_West = PedestrianNorthSouthFacingOnWest();
+Ped_North = PedestrianEastWestFacingOnNorth();
+Ped_South = PedestrianEastWestFacingOnSouth();
+Ped_East = PedestrianNorthSouthFacingOnEast();
+
+// Ticker
+timeManager = Ticker();
+system Car_SM, Car_SR, Car_NM, Car_NR, Car_WR, Car_EM, Car_WM, Car_ER,
+       Ped_West, Ped_North, Ped_South, Ped_East,
+       timeManager;
+</system>
+	<queries>
+		<query>
+			<formula/>
+			<comment/>
+		</query>
+	</queries>
+</nta>
