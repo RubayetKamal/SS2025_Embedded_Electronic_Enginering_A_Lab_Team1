@@ -6,9 +6,11 @@ This project demonstrates a small-scale IoT system combining solar tracking with
 
 ##  Project Overview
 
-- **Solar Tracking System**: Uses light-dependent resistors (LDRs) and servo motors to rotate a solar panel toward the sun.
-- **RGB LED Control**: Changes LED color based on MQTT messages received via WiFi.
-- **MQTT Communication**: Raspberry Pi acts as the MQTT broker enabling communication between all devices.
+**Solar Tracking System**: Uses light-dependent resistors (LDRs) and a servo motor to rotate a solar panel toward the sun throughout the day.
+- **Solar-Powered RGB Control**: The solar panel not only tracks the sun but also supplies power to a second Arduino, which controls an RGB LED.
+- **RGB LED Control**: The second Arduino changes the LED color based on MQTT messages received via WiFi.
+- **MQTT Communication**: A Raspberry Pi runs a Mosquitto MQTT broker, acting as the central communication hub between devices.
+- **Modular IoT Design**: Demonstrates sensor actuator integration, real-time control, and wireless communication using lightweight protocols.
 
 ##  Hardware Components
 
